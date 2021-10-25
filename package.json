@@ -1,0 +1,28 @@
+{
+  "name": "discord-bot",
+  "version": "1.0.0",
+  "description": "Discord bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "www.github.com/climoralesg/discord-bot.git"
+  },
+  "author": "Claudio Morales",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/climoralesg/discord-bot/issues"
+  },
+  "homepage": "https://github.com/climoralesg/discord-bot#readme",
+  "dependencies": {
+    "discord.js": "^13.2.0",
+    "dotenv": "^10.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.14"
+  }
+}
