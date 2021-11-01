@@ -20,6 +20,9 @@ client.on("message",function(message){
     
     const command=args.shift().toLowerCase(); //Elimina el elemento 0, retornando ese dato, los otros datos cambian de posicion
 
+    let comuna=args[0].charAt(0).toUpperCase()+args[0].slice(1);
+
+    console.log("Comuna",comuna);
 
     if(command!=""){
         
@@ -31,7 +34,7 @@ client.on("message",function(message){
                 responseType:'json',
                 
                 params:{
-                    q:args[0],
+                    q:comuna,
                     lang:lang,
                     units:unit,
                     appid:process.env.API_TOKEN_OPENWEATHER
@@ -39,29 +42,11 @@ client.on("message",function(message){
                
             }).then(function(response){
                 console.log(response.data.main.temp);
-                message.reply(`La temperatura de ${args[0]} es de ${response.data.main.temp} °C`);
+                message.reply(`La temperatura de ${comuna} es de ${response.data.main.temp} °C`);
             })
         
         }
-        
-        
-        /*
-        axios({
-            method:'get',
-            url:'https://pokeapi.co/api/v2/pokemon/'+command,
-            responseType:'json'
-
-        }).then(function(response){
-            message.reply(response.data.sprites.front_default);
-        });
-        */
-    }
-    /*
-    if(command=="hola"){
-        message.reply("Hola!");
-    }
-    */
-
+    }    
 })
 
 client.login(process.env.API_TOKEN_DISCORD);
